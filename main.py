@@ -4,6 +4,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Start character training - attack."""
     if char_class == 'warrior':
         damage = 5 + randint(3, 5)
         return (f'{char_name} нанёс урон противнику равный {damage}')
@@ -17,6 +18,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Start character training - defence."""
     if char_class == 'warrior':
         block = 10 + randint(5, 10)
         return (f'{char_name} блокировал {block} урона')
@@ -30,6 +32,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Start special character training."""
     if char_class == 'warrior':
         return (f'{char_name} применил '
                 f'специальное умение «Выносливость {105}»')
@@ -44,6 +47,12 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Introduces the game character.
+    And offers to complete training by
+    entering a command. One of three to choose from:
+    “attack”, “defense”, and “special”. It is also possible to skip
+    the training by entering the command “skip”.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -68,6 +77,11 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Select a game character.
+    Enter one of three commands:
+    "Warrior", "Mage", or "Healer".
+    To confirm, enter "Y".
+    """
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
@@ -90,6 +104,9 @@ def choice_char_class() -> str:
 
 
 if __name__ == '__main__':
+    """Selects a game character using the commands:
+    “Warrior”, “Mage”, and “Healer”.
+    To confirm, you must enter "Y"."""
     run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
